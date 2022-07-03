@@ -13,7 +13,7 @@ html {
 
 #navbar {
   position: relative;
-  background: #262262;
+  background: var(--primary-color);
   height: 100px;
   display: flex;
   align-items: center;
@@ -27,7 +27,6 @@ html {
   top: -38px;
   left: 45%;
   z-index: 50;
-  border: solid;
 }
 .menu-wrap .toggler {
   position: absolute;
@@ -113,7 +112,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 100%;
   height: 100%;
   visibility: hidden;
   overflow: hidden;
@@ -165,12 +164,15 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: hidden;
 }
 
 #imgMobile {
   position: relative;
   left: 0;
+  display: flex;
 }
+
 #imgMobile img {
   width: 100%;
   height: auto;
@@ -219,25 +221,17 @@ html {
   align-items: center;
 }
 .coming p {
-  font-family: "Clicker Script";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 36px;
   line-height: 140%;
   text-align: center;
-  color: #fafafa;
-  animation: glow 1.2s ease-in-out infinite alternate;
+  color: #f37821;
+  /* text-shadow: 4px 3px #191464; */
+  animation: shadow 1s ease infinite;
 }
-@-webkit-keyframes glow {
-  from {
-    font-size: 30px;
-    opacity: 0;
-  }
-  to {
-    font-size: 36px;
-    opacity: 100%;
-  }
-}
+
 form {
   position: absolute;
   top: 440px;
@@ -277,10 +271,11 @@ form input::placeholder {
   color: rgba(38, 34, 98, 0.2);
 }
 
-form button {
+form input[type="submit"] {
   background: #f37821;
   border-radius: 10px;
-  width: 109px;
+  width: 160px;
+  padding: 10px 16px;
   height: 40px;
   font-family: "Poppins";
   font-style: normal;
@@ -289,6 +284,32 @@ form button {
   line-height: 140%;
   border: transparent;
   color: #ffffff;
+  animation: glow 1.2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    width: 160px;
+    height: 40px;
+    font-size: 16px;
+  }
+  to {
+    width: 220px;
+    height: 46px;
+    font-size: 20px;
+  }
+}
+#social {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 50px;
+}
+#copyright {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: #807676;
+  position: absolute;
+  bottom: 8px;
 }
 #logo {
   padding: 10px 20px;
@@ -394,25 +415,34 @@ form button {
   }
   .title {
     top: 140px;
-    font-size: 32px;
+    /* font-size: 32px; */
   }
   #desc {
-    font-size: 18px;
+    /* font-size: 18px;*/
     top: 190px;
   }
   .coming {
     top: 240px;
-    font-size: 32px;
+    /* font-size: 32px; */
+  }
+  .coming p {
+    font-size: 40px;
   }
   form {
-    top: 340px;
-    font-size: 18px;
+    top: 320px;
+    /* font-size: 18px; */
   }
   form input {
     height: 40px;
     width: 420px;
     text-align: center;
   }
+  #social {
+    bottom: 40px;
+    align-self: flex-end;
+    margin-right: 50px;
+  }
+
   #imgDesktop {
     display: block;
     position: relative;
@@ -428,7 +458,7 @@ form button {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 24%;
+    left: 50%;
   }
 
   #desktop menu ul {
@@ -485,7 +515,7 @@ form button {
     top: 300px;
   }
   form {
-    top: 430px;
+    top: 410px;
   }
   form input {
     text-align: center;
